@@ -1,0 +1,88 @@
+backend:
+  name: github
+  repo: bellmontsistema/cartao-de-memoria
+  branch: main
+  site_domain: memory.henriqueteixeira.dev.br
+
+publish_mode: editorial_workflow
+media_folder: "static/assets/img"
+
+public_folder: "assets/img"
+
+
+collections:
+  - name: "posts" # Used in routes, e.g., /admin/collections/blog
+    label: "Posts" # Used in the UI
+    folder: "posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD hh:mm:ss",
+        }
+      - { label: "image", name: "thumbnail", widget: "image" }
+      - {
+        label: "Category",
+        name: "category",
+        widget: "select",
+        options: [
+          "Typescript", 
+          "CSS", 
+          "Javascript", 
+          "ESNext",
+          "HTML", 
+          "SVG", 
+          "Dev", 
+          "Misc", 
+          "Git",
+          "Netlify",
+          "Algolia",
+          "NextJS",
+          "ReactJS",
+          "Strapi",
+          "Firebase",
+          "NodeJS",
+          "MongoDB",
+          "VsCode",
+          "GraphQL",
+          "Apollo Server",
+          "GraphCMS",
+          ]
+      }
+      - {
+        label: "Background",
+        name: "background",
+        widget: "select",
+        options: [
+          { label: "Typescript", value: "#0076c6" },
+          { label: 'CSS', value: '#529DC4' },
+          { label: 'Javascript', value: '#FEC748' },
+          { label: 'ESNext', value: '#fbde34' },
+          { label: 'HTML', value: '#F05F2A' },
+          { label: 'SVG', value: '#005395' },
+          { label: 'Dev', value: '#bcdad5' },
+          { label: 'Misc', value: '#43A817' },
+          { label: 'Git', value: '#e94e31' },
+          { label: 'Netlify', value: '#00bcb3' },
+          { label: 'Algolia', value: '#5165f7' },
+          { label: 'NextJS', value: '#000000' },
+          { label: 'GatsbyJS', value: '#633194' },
+          { label: 'ReactJS', value: '#50bbd7' },
+          { label: 'Strapi', value: '#2f2f8b' },
+          { label: 'Firebase', value: '#f7c52a' },
+          { label: 'NodeJS', value: '#7ec729' },
+          { label: 'MongoDB', value: '#7ec729' },
+          { label: 'VsCode', value: '#007acc' },
+          { label: 'GraphQL', value: '#da2a93' },
+          { label: 'Apollo Server', value: '#041e3d' },
+          { label: 'GraphCMS', value: '#0a0e26' },
+        ]
+      }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+
