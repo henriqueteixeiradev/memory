@@ -1,13 +1,13 @@
 backend:
   name: github
-  repo: bellmontsistema/cartao-de-memoria
+  repo: henriqueteixeiradev/memory
   branch: main
   site_domain: memory.henriqueteixeira.dev.br
 
 publish_mode: editorial_workflow
-media_folder: "static/assets/img"
+media_folder: "/static/assets/img"
 
-public_folder: "assets/img"
+public_folder: "/assets/img"
 
 
 collections:
